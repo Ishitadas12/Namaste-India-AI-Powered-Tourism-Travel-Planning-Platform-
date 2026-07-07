@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Namaste India</title>
+<link href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #001f3f url("WB_Background_2.png") no-repeat center top fixed;
+      background-size: 165%;
+      color: #fff;
+      text-align: center;
+      padding: 0;
+    }
+
+    svg {
+      width: 600px;
+      max-width: 90%;
+    }
+
+    path {
+      fill: none;
+      stroke: #f1c40f;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: draw 4s ease forwards;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Fixed header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 8px 20px;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('WB Landscape.png');
+      background-size: cover;
+      background-position: center top 10%;
+      z-index: 1000;
+    }
+
+    .main {
+      margin-top: 200px; /* keeps content below header + animation */
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+      color: #f1c40f;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #ddd;
+      margin: 10px 0 0;
+      font-family: 'Cinzel Decorative', cursive; /* Adds heritage-style font */
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(40, 35, 35, 0.6);
+    }
+
+    /* Search bar */
+    .search-bar {
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .styled-select {
+      background: rgba(0, 0, 0, 0.6);
+      color: #f1c40f;
+      border: 2px solid #f1c40f;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 16px;
+      font-weight: bold;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .styled-select:hover,
+    .styled-select:focus {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .styled-button {
+      background: #f1c40f;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .styled-button:hover {
+      background: #fff;
+      color: #f1c40f;
+    }
+
+    /* Info Block */
+    .block3 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px auto;
+      width: 96%;
+      background: rgba(0, 0, 0, 0.6);
+
+    }
+
+    .block3 .image {
+      flex: 0 0 365px;
+      background: url("WB_Background_4.png") no-repeat center center;
+      background-size: contain;
+      height: 200%;
+    }
+
+    .block3 .text {
+      padding: 20px;
+      text-align: left;
+      flex: 1;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .block3 .text h2 {
+      font-size: 28px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .block3 .text p {
+      font-size: 23px;
+      line-height: 1.6;
+      color: #fff;
+    }
+
+    .history-box{
+    display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 750px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px auto;
+      width: 96%;
+      background: rgba(0, 0, 0, 0.6);
+}
+
+.history-content{
+    flex: 1;
+    text-align: left;
+}
+
+.history-content h2{
+    text-align: center;
+    font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.history-content p{
+    padding: 20px;
+      text-align: left;
+     font-size: 20px;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+}
+    
+      .culture-box{
+      width: 96%;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+}
+
+
+.culture-image img {
+    
+    float:left;
+    width:400px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-bottom:1px;
+    margin-top: 50px;
+}
+
+.culture-content{
+    flex: 1;
+    text-align: left;
+}
+
+.culture-content h2{
+    text-align: center;
+    font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.culture-content p{
+    padding: 20px;
+      text-align: left;
+     font-size: 20px;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.food-box{
+      width: 96%;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+}
+
+
+.food-image img {
+    
+    float:right;
+    width:400px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-bottom:1px;
+    margin-top: 50px;
+}
+
+.food-content{
+    flex: 1;
+    text-align: left;
+}
+
+.food-content h2{
+    text-align: center;
+    font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.food-content p{
+    padding: 20px;
+      text-align: left;
+     font-size: 20px;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.festival-box{
+      width: 96%;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+}
+
+
+.festival-image img {
+    
+    float:left;
+    width:400px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-bottom:1px;
+    margin-top: 50px;
+}
+
+.festival-content{
+    flex: 1;
+    text-align: left;
+}
+
+.festival-content h2{
+    text-align: center;
+    font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.festival-content p{
+    padding: 20px;
+      text-align: left;
+     font-size: 20px;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.tourist-box{
+      width: 96%;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+}
+
+
+.tourist-image img {
+    
+    float:right;
+    width:400px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-bottom:1px;
+    margin-top: 50px;
+}
+
+.tourist-content{
+    flex: 1;
+    text-align: left;
+}
+
+.tourist-content h2{
+    text-align: center;
+    font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.tourist-content p{
+    padding: 20px;
+      text-align: left;
+     font-size: 20px;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+}
+
+
+    footer {
+      color: #aaa;
+      font-size: 14px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* Namaste SVG animation */
+.namaste-svg {
+  width: 100%;
+  max-width: 600px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.namaste-svg text {
+  font-family: 'Parisienne', cursive;
+  font-size: 120px;
+  fill: none;
+  stroke: #f1c40f;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawText 5s ease forwards;
+}
+.letter1 { animation-delay: 0s; }
+.letter2 { animation-delay: 0.5s; }
+.letter3 { animation-delay: 1s; }
+.letter4 { animation-delay: 1.5s; }
+.letter5 { animation-delay: 2s; }
+.letter6 { animation-delay: 2.5s; }
+.letter7 { animation-delay: 3s; }
+
+@keyframes drawText {
+  to {
+    stroke-dashoffset: 0;
+    fill: #f1c40f;
+  }
+}
+.fixed-block {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #f2f2f2;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+
+.hamburger {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1001;
+      color: #f9f106;
+      user-select: none;
+    }
+
+.side-menu{
+    position: fixed;
+    top: 0;
+    left: -300px;
+
+    width: 280px;
+    height: 100%;
+
+    background: rgba(0,0,0,0.95);
+
+    z-index: 1000;
+
+    transition: 0.4s ease;
+
+    padding-top: 80px;
+}
+
+.side-menu.active{
+    left: 0;
+}
+
+.side-menu a{
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 18px 25px;
+
+    font-size: 20px;
+
+    font-family: 'Times New Roman', serif;
+
+    transition: 0.3s;
+}
+
+.side-menu a:hover{
+    background: #f1c40f;
+    color: black;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.highlight{
+    box-shadow: 0 0 30px #f1c40f;
+    border: 3px solid #f1c40f;
+    transition: 0.5s;
+}
+
+#block3,
+#history,
+#culture,
+#food,
+#festival,
+#tourist {
+    scroll-margin-top: 300px;
+}
+.header{
+    position:relative;
+    overflow:hidden;
+}
+
+.toy-train{
+    position:absolute;
+    bottom:-40px;
+
+    width:270px;
+
+    left:-250px;
+
+    z-index:1000;
+
+    animation:trainMove 15s linear infinite;
+}
+
+@keyframes trainMove{
+    from{
+        left:-250px;
+    }
+
+    to{
+        left:100%;
+    }
+}
+.tracks{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    height:8px;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #f4f2f2 0px,
+        #444 15px,
+        transparent 15px,
+        transparent 25px
+    );
+}
+ </style>
+</head>
+<body>
+   <header>
+  <!-- Animated Namaste SVG -->
+  <svg viewBox="0 0 800 200" class="namaste-svg">
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">
+     ༺ West Bengal ༻ 
+    </text>
+  </svg>
+  <p>The Land of Literature, Art, and Heritage</p>
+  <p>
+
+  </p>
+  <img src="Toy_train_WB.png" class="toy-train" alt="Darjeeling Toy Train">
+  <div class="tracks"></div>
+</header>
+
+<div class="fixed-block">
+    <strong>Fixed Header</strong>
+</div>
+ <!-- Hamburger icon -->
+<div class="hamburger" id="hamburger">☰</div>
+
+<div class="side-menu" id="sideMenu">
+  <a href="#block3" onclick="highlightSection('block3')">
+Discover West Bengal
+</a>
+  <a href="#history" onclick="highlightSection('history')">
+History of West Bengal
+</a>
+ <a href="#culture" onclick="highlightSection('culture')">
+Culture and Tradition of West Bengal
+</a>
+  <a href="#food" onclick="highlightSection('food')">
+Famous Foods of West Bengal
+</a>
+  <a href="#festival" onclick="highlightSection('festival')">
+Famous Festivals of West Bengal
+</a>
+  <a href="#tourist" onclick="highlightSection('tourist')">
+Tourist Attractions of West Bengal
+</a>
+</div>
+
+  <div class="main">
+    <!-- Cultural Block -->
+    <div class="block3" id="block3">
+      <div class="image"></div>
+      <div class="text">
+        <h2>༺ Discover West Bengal ༻ </h2>
+        <p>
+        West Bengal, the cultural heart of eastern India, is a land where history, heritage, nature, and tradition come together in perfect harmony. From the snow-capped mountains of Darjeeling and the lush tea gardens of Jalpaiguri to the vibrant streets of Kolkata and the majestic mangrove forests of the Sundarbans, the state offers a remarkable blend of natural beauty and cultural richness.
+        Renowned for its literature, art, music, festivals, and cuisine, West Bengal has been home to great thinkers, poets, and visionaries who have shaped India's cultural identity. The state is also known for iconic landmarks such as the Victoria Memorial, Howrah Bridge, Bishnupur Temples, and the Royal Bengal Tiger of the Sundarbans.
+        Explore the diverse districts of West Bengal and experience a journey through its timeless heritage, breathtaking landscapes, and vibrant traditions.
+
+
+        </p>
+      </div>
+    </div>
+    <div class="history-box" id="history">
+
+    <div class="history-content">
+        <h2>༺ History of West Bengal ༻ </h2>
+
+        <p>
+            West Bengal boasts a rich and diverse history that stretches back over two thousand years. The region was once a thriving center of ancient civilization and formed part of powerful kingdoms such as the Maurya and Gupta Empires. During the early medieval period, the Pala Dynasty ruled Bengal and became renowned for promoting Buddhism, education, and art, while the Sena Dynasty later contributed significantly to the development of Hindu culture and architecture.  
+            In the medieval era, Bengal emerged as one of the wealthiest regions in the Indian subcontinent under the Bengal Sultanate. Its strategic location and flourishing trade networks attracted merchants from across Asia, Europe, and the Middle East. The region later came under Mughal rule, becoming an important center for commerce, textiles, and culture.
+        </p>
+
+        <p>
+            A turning point in Bengal's history came in 1757 with the Battle of Plassey, fought near present-day Murshidabad. The victory of the British East India Company marked the beginning of British colonial rule in India. Kolkata (formerly Calcutta) subsequently became the capital of British India until 1911 and evolved into a major hub of administration, education, literature, and intellectual thought.
+            West Bengal played a pivotal role in India's freedom movement. The Bengal Renaissance of the 19th and early 20th centuries produced remarkable thinkers, reformers, and visionaries such as Raja Ram Mohan Roy, Ishwar Chandra Vidyasagar, Bankim Chandra Chattopadhyay, Swami Vivekananda, and Rabindranath Tagore. Their contributions transformed Indian society, literature, education, and nationalism.
+            Following India's independence in 1947, Bengal was partitioned into West Bengal (India) and East Pakistan, which later became Bangladesh. Despite the challenges of partition, West Bengal preserved its rich cultural heritage and continued to thrive as a center of art, literature, education, and innovation.
+        </p>
+
+        <p>
+            Today, West Bengal stands as a vibrant blend of history and modernity, where ancient temples, colonial landmarks, cultural traditions, and intellectual achievements continue to shape its unique identity.
+        </p>
+
+    </div>
+</div>
+<div class="culture-box" id="culture">
+
+    <div class="culture-image">
+        <img src="WB_CULTURE_2.png" alt="Culture of West Bengal">
+    </div>
+
+    <div class="culture-content">
+        <h2>༺ Culture & Traditions of West Bengal ༻</h2>
+
+        <p>
+            West Bengal is often referred to as the cultural heart of India due to its extraordinary contributions to literature, music, art, theatre, cinema, and intellectual thought. The state's culture is deeply rooted in centuries-old traditions while continuously embracing innovation and modernity. Every aspect of Bengali life, from festivals and food to language and daily customs, reflects a profound appreciation for creativity, knowledge, and community. This unique blend of tradition and progress has shaped West Bengal into one of the most culturally influential regions of the country.
+
+        <p>
+            Literature occupies a special place in Bengali culture. The state has produced some of India's greatest literary figures, including Rabindranath Tagore, Bankim Chandra Chattopadhyay, Kazi Nazrul Islam, Sarat Chandra Chattopadhyay, and many others. Their works have not only enriched Bengali literature but have also influenced Indian society and nationalism. Reading, poetry recitations, literary discussions, and book fairs remain an integral part of Bengali life. The annual Kolkata International Book Fair, one of the largest book fairs in the world, attracts millions of visitors and reflects the state's enduring love for literature and learning.
+        </p>
+
+        <p>
+            Music is deeply woven into the cultural fabric of West Bengal. Rabindra Sangeet, composed by Rabindranath Tagore, continues to inspire generations with its timeless melodies and profound lyrics. Baul music, performed by wandering folk singers, represents Bengal's spiritual and philosophical traditions through soulful songs and simple instruments. Nazrul Geeti, devotional music, classical performances, and modern Bengali songs further enrich the state's musical heritage. Music is not merely a form of entertainment in Bengal but an expression of emotion, identity, and cultural pride.
+        </p>
+
+        <p>
+            Festivals are celebrated with immense enthusiasm and grandeur throughout the state. Durga Puja is undoubtedly the most significant festival, transforming cities and towns into vibrant centers of art, devotion, and celebration. Magnificent pandals, artistic idols, cultural performances, and community gatherings create an atmosphere of joy and unity. Recognized by UNESCO as an Intangible Cultural Heritage of Humanity, Durga Puja symbolizes the artistic excellence and cultural spirit of Bengal. Other festivals such as Kali Puja, Saraswati Puja, Poila Boishakh (Bengali New Year), Rath Yatra, Eid, Christmas, and Guru Nanak Jayanti are also celebrated with equal enthusiasm, reflecting the state's rich diversity and communal harmony.
+        </p>
+
+       <div style="clear: both;"></div>
+
+        <p>
+          Traditional attire in West Bengal beautifully represents elegance and heritage. Women often wear the iconic white saree with red borders during festivals and special occasions, symbolizing grace and cultural identity. Handwoven textiles such as Tant, Baluchari, Jamdani, and Kantha-stitched sarees are renowned for their intricate craftsmanship and artistic beauty. Men traditionally wear dhoti and kurta during religious ceremonies, weddings, and cultural events. These traditional garments continue to hold cultural significance while coexisting with modern fashion trends.
+        </p>
+
+        <p>
+          The artistic traditions of West Bengal are among the richest in India. Bishnupur's terracotta temples and pottery showcase remarkable architectural and artistic excellence. Kumartuli, a famous artisan quarter in Kolkata, is renowned for crafting exquisite clay idols used during Durga Puja and other festivals. Bengal's folk arts, including Patachitra paintings, Dokra metal crafts, Shola art, and intricate handicrafts, reflect the creativity and skill of local artisans. These traditional art forms continue to be preserved and promoted, serving as living symbols of the state's cultural heritage.
+        </p>
+
+        <p>
+          The performing arts have also flourished in West Bengal for centuries. Folk theatre forms such as Jatra combine storytelling, music, and drama to entertain audiences while preserving cultural narratives. Classical dance, folk dances, and modern theatre play an important role in the state's cultural life. Kolkata, in particular, has long been regarded as a center for theatre and cinema, producing internationally acclaimed filmmakers such as Satyajit Ray, whose works brought global recognition to Indian cinema. Cultural performances remain an essential part of festivals, educational institutions, and community celebrations across the state.
+        </p>
+
+        <p>
+          Above all, the culture of West Bengal is defined by its spirit of intellectual curiosity, artistic expression, and social harmony. Whether through literature, music, festivals, art, or everyday traditions, the people of West Bengal continue to preserve and celebrate a heritage that has inspired generations. This vibrant cultural legacy remains one of the state's greatest treasures, attracting visitors from around the world who wish to experience the unique charm and creativity of Bengal.
+        </p>
+      </div>
+</div>
+
+<div class="food-box" id="food">
+
+    <div class="food-image">
+        <img src="FOODS_WB.png" alt="Culture of West Bengal">
+    </div>
+
+    <div class="food-content">
+        <h2>༺ Famous Foods of West Bengal ༻</h2>
+
+        <p>
+            West Bengal is celebrated for its rich culinary heritage, which reflects the state's culture, traditions, and love for flavorful food. Bengali cuisine is characterized by its delicate use of spices, fresh ingredients, and a perfect balance of sweet and savory flavors. Rice and fish form the foundation of everyday meals, while mustard oil and aromatic spices give Bengali dishes their distinctive taste. Among the most famous delicacies is Shorshe Ilish, a traditional preparation of Hilsa fish cooked in a rich mustard sauce, widely regarded as a symbol of Bengali cuisine. Another beloved dish is Kosha Mangsho, a slow-cooked mutton curry known for its deep flavors and aromatic spices, often enjoyed during festivals and family celebrations.
+        <p>
+            West Bengal is equally famous for its extraordinary variety of sweets, which have earned worldwide recognition. Rosogolla, soft cottage cheese dumplings soaked in sugar syrup, is one of the state's most iconic desserts. Other popular sweets include Sandesh, crafted from fresh chhena (cottage cheese), and Mishti Doi, a creamy sweet yogurt cherished for its rich texture and caramelized flavor. Street food also plays a significant role in Bengal's culinary culture, with Puchka being a favorite among people of all ages. Filled with tangy tamarind water, mashed potatoes, and spices, it offers a burst of flavors in every bite. Together, these dishes showcase the diversity, creativity, and culinary excellence that make West Bengal one of India's most celebrated food destinations.
+
+    </div>
+</div>
+
+<div class="festival-box" id="festival">
+
+    <div class="festival-image">
+        <img src="Festival_WB.png" alt="Famous Festivals of West Bengal">
+    </div>
+
+    <div class="festival-content">
+        <h2>༺ Famous Festivals of West Bengal ༻</h2>
+
+        <p>
+            West Bengal is renowned for its vibrant festivals, which reflect the state's rich cultural heritage, artistic excellence, and spirit of unity. The most celebrated festival is Durga Puja, a grand five-day celebration dedicated to Goddess Durga. Magnificent pandals, beautifully crafted idols, cultural performances, and community gatherings transform cities and villages into centers of devotion and festivity. Recognized by UNESCO as an Intangible Cultural Heritage of Humanity, Durga Puja is not merely a religious event but a celebration of Bengal's art, creativity, and social harmony.
+        <p>
+           Another important festival is Kali Puja, dedicated to Goddess Kali and celebrated with great devotion across the state. The festival is marked by beautifully illuminated temples, prayers, and cultural programs. Saraswati Puja, dedicated to the Goddess of knowledge and learning, holds special significance among students and educational institutions. During Poila Boishakh, the Bengali New Year, people welcome new beginnings with traditional attire, cultural performances, and festive meals. Festivals such as Rath Yatra, Dol Jatra (Holi), Eid-ul-Fitr, Christmas, and Guru Nanak Jayanti are also celebrated with equal enthusiasm, showcasing West Bengal's tradition of communal harmony and cultural diversity. Together, these festivals create a colorful tapestry of traditions that define the vibrant cultural identity of West Bengal.
+
+    </div>
+</div>
+
+<div class="tourist-box" id="tourist">
+
+    <div class="tourist-image">
+        <img src="Festival_WB.png" alt="Famous Festivals of West Bengal">
+    </div>
+
+    <div class="tourist-content">
+        <h2>༺ Tourist Attractions of West Bengal ༻</h2>
+
+        <p>
+            West Bengal is a land of extraordinary natural beauty, historical landmarks, architectural marvels, and cultural treasures that captivate visitors from around the world. Stretching from the snow-capped Himalayan peaks of Darjeeling in the north to the tranquil beaches of the Bay of Bengal in the south, the state offers an incredible diversity of landscapes, experiences, and attractions. Rich in history, heritage, wildlife, spirituality, and artistic traditions, West Bengal presents a unique blend of ancient culture and modern vibrancy. Whether exploring bustling cities, serene hill stations, dense mangrove forests, sacred temples, or picturesque coastal destinations, travelers can discover countless wonders at every turn.
+        <div style="clear: both;"></div>
+        <p>
+           One of the state's most iconic landmarks is the Victoria Memorial in Kolkata. Built in memory of Queen Victoria, this magnificent white-marble monument is renowned for its grand architecture, beautiful gardens, and museum galleries that showcase the history of colonial India. Another symbol of Kolkata is the Howrah Bridge, one of the world's busiest cantilever bridges. Spanning the Hooghly River, it represents the city's resilience and serves as a vital connection between Kolkata and Howrah while offering breathtaking views, especially during sunrise and sunset.
+        </p>
+          <p>
+           One of the state's most iconic landmarks is the Victoria Memorial in Kolkata. Built in memory of Queen Victoria, this magnificent white-marble monument is renowned for its grand architecture, beautiful gardens, and museum galleries that showcase the history of colonial India. Another symbol of Kolkata is the Howrah Bridge, one of the world's busiest cantilever bridges. Spanning the Hooghly River, it represents the city's resilience and serves as a vital connection between Kolkata and Howrah while offering breathtaking views, especially during sunrise and sunset.
+        </p>
+        <p>
+          Nestled in the foothills of the Himalayas, Darjeeling is one of India's most beloved hill stations. Known as the "Queen of Hills," it is famous for its tea gardens, cool climate, panoramic mountain views, and the historic Darjeeling Himalayan Railway, a UNESCO World Heritage Site. The breathtaking sunrise over Kanchenjunga from Tiger Hill attracts visitors from around the world and remains one of the most memorable experiences in the region.
+        </p>
+
+        <p>
+          For those seeking relaxation by the sea, Digha offers beautiful sandy beaches, scenic sunsets, and a peaceful coastal atmosphere. It is one of the most popular seaside destinations in eastern India and attracts thousands of tourists every year. The town also serves as a gateway to nearby beaches such as Mandarmani, Tajpur, and Shankarpur, which are known for their natural beauty and tranquil surroundings.
+        </p>
+
+        <p>
+          The historic town of Bishnupur is famous for its magnificent terracotta temples, intricate architecture, and rich cultural heritage. Built by the Malla kings, these temples are admired for their detailed carvings and unique artistic style. Bishnupur is also known for its classical music tradition and the world-renowned Baluchari sarees, making it a significant center of Bengal's artistic legacy.
+        </p>
+
+        <p>
+          Together, these attractions showcase the remarkable diversity of West Bengal, where majestic mountains, vibrant cities, pristine beaches, dense forests, and centuries of history come together to create unforgettable travel experiences for visitors from across the globe.
+        </p>
+
+    </div>
+</div>
+
+
+
+  <footer>
+    "India's Heritage, India's Pride" ~ JAI HIND ♥ 
+  </footer>
+
+ <script>
+
+function highlightSection(id){
+
+    const section = document.getElementById(id);
+
+    section.classList.add("highlight");
+
+    setTimeout(()=>{
+        section.classList.remove("highlight");
+    },3000);
+}
+
+const hamburger = document.getElementById("hamburger");
+const sideMenu = document.getElementById("sideMenu");
+
+hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    sideMenu.classList.toggle("active");
+});
+
+sideMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+document.addEventListener("click", () => {
+    sideMenu.classList.remove("active");
+});
+document.querySelectorAll(".side-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        sideMenu.classList.remove("active");
+    });
+});
+
+</script>
+</body>
+</html>
